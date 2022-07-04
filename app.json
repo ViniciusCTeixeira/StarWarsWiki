@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "StarWarsWiki",
+    "slug": "StarWarsWiki",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}

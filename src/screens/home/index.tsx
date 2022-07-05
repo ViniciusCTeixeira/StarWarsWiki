@@ -1,9 +1,29 @@
 import React from 'react';
+import {View} from "react-native";
 
-import {Header} from "../../components/header";
+import Styles from "../../assets/styles";
 
-export function Home() {
+import {Button} from "@rneui/themed";
+
+import {propsNavigationStack} from "../../Routes";
+import type {NativeStackScreenProps} from '@react-navigation/native-stack';
+
+type HomeProps = NativeStackScreenProps<propsNavigationStack, 'Home'>;
+
+export function Home(props: HomeProps) {
     return (
-        <Header title={"Teste"} home={true}/>
+        <View style={Styles.container}>
+            <Button
+                title={'Comunidade'}
+                containerStyle={{
+                    width: 200,
+                    marginHorizontal: 50,
+                    marginVertical: 10,
+                }}
+                onPress={() => {
+                    props.navigation.navigate("Community")
+                }}
+            />
+        </View>
     )
 }

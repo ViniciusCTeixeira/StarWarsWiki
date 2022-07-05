@@ -1,10 +1,11 @@
 import React, {useEffect, useState} from 'react';
+import {StatusBar} from "expo-status-bar";
 import {ThemeProvider} from '@rneui/themed';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 
 import AnimatedSplash from "react-native-animated-splash-screen";
 
-import {Home} from './screens/home'
+import {Stack} from "./Routes";
 
 import Logo from './assets/images/logo.png'
 
@@ -28,7 +29,7 @@ export default function App() {
                 logoWidth={150}
             >
                 <SafeAreaProvider>
-                    <Home />
+                    <Stack />
                 </SafeAreaProvider>
             </AnimatedSplash>
         </ThemeProvider>

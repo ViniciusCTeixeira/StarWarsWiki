@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {StatusBar, ImageBackground, View, ScrollView, Image} from "react-native";
+import {ImageBackground, View, ScrollView, Image} from "react-native";
 import {Button} from '@rneui/themed';
 import {SafeAreaView} from 'react-native-safe-area-context';
 
@@ -12,7 +12,7 @@ import {CardPlanet} from "../../components/planets/card";
 
 import {getRandomPlanet} from "../../services/swapi";
 
-import {PlanetsProps} from "../../Models/planets";
+import {PlanetsProps} from "../../models/planets";
 
 import {propsNavigationStack} from "../../Routes";
 import type {NativeStackScreenProps} from '@react-navigation/native-stack';

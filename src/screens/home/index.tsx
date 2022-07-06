@@ -1,9 +1,10 @@
 import React, {useEffect, useState} from 'react';
-import {StatusBar, ImageBackground, View, ScrollView} from "react-native";
+import {StatusBar, ImageBackground, View, ScrollView, Image} from "react-native";
 import {Button} from '@rneui/themed';
 import {SafeAreaView} from 'react-native-safe-area-context';
 
 import Styles from "../../assets/styles";
+import LogoImage from "../../assets/images/logo.png";
 
 import BackgroundHome from "../../assets/images/backgroud_home.jpg"
 
@@ -41,6 +42,9 @@ export function Home(props: HomeProps) {
             <ImageBackground source={BackgroundHome} resizeMode="cover" style={{flex: 1}}>
                 <ScrollView>
                     <View style={{paddingHorizontal: 10, marginVertical: 10}}>
+                        <View style={Styles.text_center}>
+                            <Image source={LogoImage} style={{width: 100, height: 100}}/>
+                        </View>
                         {isLoading && <CardPlanet planet={planet} reload={reload} setReload={setReload} loading={loading}/>}
                         <View style={[Styles.column, {width: '100%', marginVertical: 10}]}>
                             <View style={[Styles.row, {width: '100%', justifyContent: "space-between"}]}>

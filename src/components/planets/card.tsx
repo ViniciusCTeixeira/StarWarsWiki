@@ -29,7 +29,7 @@ export function CardPlanet(props: CardHomeProps) {
             <Text h4>População: {props.planet.population}</Text>
             <Text h4>Clima: {props.planet.climate}</Text>
             <Text h4>Terreno: {props.planet.terrain}</Text>
-            <Text h4>Água: {props.planet.surface_water === "unknown" ? 'desconhecido' : `${props.planet.surface_water}%`}</Text>
+            <Text h4>Água superficial: {props.planet.surface_water === "unknown" ? 'desconhecido' : `${props.planet.surface_water}%`}</Text>
 
             <View style={[Styles.row, {width: '100%', justifyContent: "space-between"}]}>
                 <View style={{flex: 0.48}}>

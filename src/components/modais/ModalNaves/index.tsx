@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import { Modal, ModalProps, Text, TouchableOpacity, View } from 'react-native';
 import { starship } from "../../../screens/starships";
 
+
 interface modalProps extends ModalProps {
     item: starship,
     modal: boolean,
     setModal: React.Dispatch<React.SetStateAction<boolean>>,
-    preco?: number
 }
 
 export const StarshipModal = ({item, modal, setModal, ...rest}:modalProps) => {
@@ -21,7 +21,7 @@ export const StarshipModal = ({item, modal, setModal, ...rest}:modalProps) => {
     >
         <TouchableOpacity onPress={() => setModal(false)}>
             <View style={{ backgroundColor: 'red', height: 200, width: '100%' }}>
-                <Text style={{ color: 'white' }}>{item.name}{item.pilots}</Text>
+                <Text style={{ color: 'white' }}>{item.name}</Text>
             </View>
         </TouchableOpacity>
     </Modal>

@@ -27,7 +27,7 @@ export function Stack() {
                         fontWeight: 'bold',
                     },
                     headerTitleAlign: 'center',
-                    statusBarTranslucent: true
+               
                 }}/>
                 <Screen name="Community" component={Community} options={{ title: 'Comunidade' }}/>
                 <Screen name="Favoritos" component={Home}/>

@@ -1,8 +1,10 @@
 import React from 'react';
 import {Text, Button} from '@rneui/themed';
-import {View} from "react-native";
+import {View, Image} from "react-native";
 
 import Styles from "../../assets/styles";
+
+import PlanetImage from "../../assets/images/planet.png";
 
 import {PlanetsProps} from "../../Models/planets";
 
@@ -26,6 +28,9 @@ export function CardPlanet(props: CardHomeProps) {
                 <Text h1>{props.planet.name}</Text>
             </View>
             <View style={Styles.divider}/>
+            <View style={Styles.text_center}>
+                <Image source={PlanetImage} style={{width: 100, height: 100}}/>
+            </View>
             <Text h4>População: {props.planet.population}</Text>
             <Text h4>Clima: {props.planet.climate}</Text>
             <Text h4>Terreno: {props.planet.terrain}</Text>

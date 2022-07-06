@@ -6,6 +6,12 @@ const Styles = StyleSheet.create({
         flexDirection: "column",
         backgroundColor: '#fff',
     },
+    row: {
+        flexDirection: "row",
+    },
+    column: {
+        flexDirection: "column",
+    },
     text_center:{
         alignItems: 'center',
     },

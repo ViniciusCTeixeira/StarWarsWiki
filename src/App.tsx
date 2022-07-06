@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react';
-import {StatusBar} from "expo-status-bar";
 import {ThemeProvider} from '@rneui/themed';
-import {SafeAreaProvider} from 'react-native-safe-area-context';
+import {SafeAreaView, StatusBar} from "react-native";
 
 import AnimatedSplash from "react-native-animated-splash-screen";
 
@@ -29,9 +28,8 @@ export default function App() {
                 logoHeight={150}
                 logoWidth={150}
             >
-                <SafeAreaProvider>
-                    <Stack />
-                </SafeAreaProvider>
+                <StatusBar backgroundColor="#2EBD6B" barStyle="light-content" />
+                <Stack/>
             </AnimatedSplash>
         </ThemeProvider>
     );

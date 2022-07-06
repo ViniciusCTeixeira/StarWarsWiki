@@ -1,5 +1,6 @@
 import React from 'react';
 import {View} from "react-native";
+import {SafeAreaView} from 'react-native-safe-area-context';
 
 import Styles from "../../assets/styles";
 
@@ -12,7 +13,7 @@ type HomeProps = NativeStackScreenProps<propsNavigationStack, 'Home'>;
 
 export function Home(props: HomeProps) {
     return (
-        <View style={Styles.container}>
+        <SafeAreaView style={Styles.container} edges={['top', 'left', 'right']}>
             <Button
                 title={'Comunidade'}
                 containerStyle={{
@@ -24,6 +25,6 @@ export function Home(props: HomeProps) {
                     props.navigation.navigate("Community")
                 }}
             />
-        </View>
+        </SafeAreaView>
     )
 }

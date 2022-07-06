@@ -1,5 +1,6 @@
 import {NavigationContainer} from "@react-navigation/native";
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {createNativeStackNavigator, NativeStackScreenProps} from '@react-navigation/native-stack';
+import {SafeAreaProvider} from 'react-native-safe-area-context';
 
 import {Home} from './screens/home'
 import {Community} from "./screens/community";
@@ -7,32 +8,23 @@ import {Community} from "./screens/community";
 export type propsNavigationStack = {
     Home: undefined
     Community: undefined
-    Favoritos: undefined
-    Internos: undefined
+    Favorites: undefined
+    Internal: undefined
 }
 
-const { Screen, Navigator } = createNativeStackNavigator<propsNavigationStack>();
+const {Screen, Navigator} = createNativeStackNavigator<propsNavigationStack>();
 
 export function Stack() {
     return (
-        <NavigationContainer>
-            <Navigator initialRouteName="Home">
-                <Screen name="Home" component={Home} options={{
-                    title: 'Star Wars',
-                    headerStyle: {
-                        backgroundColor: '#f4511e',
-                    },
-                    headerTintColor: '#fff',
-                    headerTitleStyle: {
-                        fontWeight: 'bold',
-                    },
-                    headerTitleAlign: 'center',
-               
-                }}/>
-                <Screen name="Community" component={Community} options={{ title: 'Comunidade' }}/>
-                <Screen name="Favoritos" component={Home}/>
-                <Screen name="Internos" component={Home}/>
-            </Navigator>
-        </NavigationContainer>
+        <SafeAreaProvider>
+            <NavigationContainer>
+                <Navigator initialRouteName="Home" screenOptions={{headerShown: false}}>
+                    <Screen name="Home" component={Home} options={{title: 'Home'}}/>
+                    <Screen name="Community" component={Community} options={{title: 'Comunidade', headerShown: true}}/>
+                    <Screen name="Favorites" component={Home} options={{title: 'Favoritos'}}/>
+                    <Screen name="Internal" component={Home}/>
+                </Navigator>
+            </NavigationContainer>
+        </SafeAreaProvider>
     );
 }

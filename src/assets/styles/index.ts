@@ -18,12 +18,6 @@ const Styles = StyleSheet.create({
     content_center: {
         justifyContent: 'center',
     },
-    text_sm: {
-        fontSize: 10
-    },
-    text_lg: {
-        fontSize: 18
-    },
     divider: {
         borderBottomColor: 'black',
         borderBottomWidth: 1,

@@ -1,29 +1,18 @@
-import Axios from "axios";
+import axios from "axios";
 
-const instance = Axios.create({
+const instance = axios.create({
     baseURL: 'https://swapi.dev/api/',
-    timeout: 1000,
 });
 
 export async function getRoot() {
-    try {
-        // 👇️ const data: GetUsersResponse
-        const response = await instance.get(
-            '',
-            {
-                headers: {
-                    Accept: 'application/json',
-                },
-            },
-        );
+    return instance.get(
+        ''
+    );
+}
 
-        console.log(JSON.stringify(response.data, null, 4));
-
-        console.log('response status is: ', response.status);
-
-        return response;
-    } catch (error) {
-        console.log('error message: ', error.message);
-        return error.message;
-    }
+export async function getRandomPlanet() {
+    const planetID = Math.round(Math.random() * (60 - 1) + 1)
+    return instance.get(
+        `planets/${planetID}/`
+    );
 }

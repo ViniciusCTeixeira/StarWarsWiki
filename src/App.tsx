@@ -28,7 +28,7 @@ export default function App() {
                 logoHeight={150}
                 logoWidth={150}
             >
-                    <Stack />
+                <Stack/>
             </AnimatedSplash>
         </ThemeProvider>
     );

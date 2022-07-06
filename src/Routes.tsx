@@ -4,6 +4,8 @@ import {SafeAreaProvider} from 'react-native-safe-area-context';
 
 import {Home} from './screens/home'
 import {Community} from "./screens/community";
+import {StatusBar} from "react-native";
+import React from "react";
 
 export type propsNavigationStack = {
     Home: undefined
@@ -17,6 +19,7 @@ const {Screen, Navigator} = createNativeStackNavigator<propsNavigationStack>();
 export function Stack() {
     return (
         <SafeAreaProvider>
+            <StatusBar backgroundColor="rgb(50, 50, 120)" barStyle="light-content"/>
             <NavigationContainer>
                 <Navigator initialRouteName="Home" screenOptions={{headerShown: false}}>
                     <Screen name="Home" component={Home} options={{title: 'Home'}}/>

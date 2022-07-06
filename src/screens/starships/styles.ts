@@ -18,6 +18,9 @@ export const styles = StyleSheet.create({
         fontSize: 18,
         fontWeight: 'bold'
     },
+    textos: {
+        padding:10
+    },
     text: {
         color: '#fff',
         fontSize: 14,

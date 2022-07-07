@@ -2,28 +2,19 @@ import Axios from "axios";
 
 const instance = Axios.create({
     baseURL: 'https://jsonplaceholder.typicode.com/',
-    timeout: 1000,
 });
 
-export async function getRoot() {
-    try {
-        // 👇️ const data: GetUsersResponse
-        const response = await instance.get(
-            '',
-            {
-                headers: {
-                    Accept: 'application/json',
-                },
-            },
-        );
-
-        console.log(JSON.stringify(response.data, null, 4));
-
-        console.log('response status is: ', response.status);
-
-        return response;
-    } catch (error) {
-        console.log('error message: ', error.message);
-        return error.message;
-    }
+export async function sendPost(titulo: string, body: string, userID: number) {
+    return instance.post(
+        `posts`,
+        {
+            title: titulo,
+            body: body,
+            userId: userID
+        },{
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+            }
+        }
+    );
 }

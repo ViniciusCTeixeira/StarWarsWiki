@@ -3,17 +3,17 @@ import {View, Modal, Image, ImageBackground, ScrollView} from "react-native";
 import Styles from "../../assets/styles";
 import {Button, Text} from "@rneui/themed";
 
-import { StarshipsProps } from '../../models/starships';
-import StarshipsImage from "../../assets/images/naves.png";
+import {PeoplesProps } from '../../models/peoples';
+import PeopleImage from "../../assets/images/people.jpg";
 import BackgroundHome from "../../assets/images/backgroud_home.jpg";
 
-interface ModalStarships {
+interface ModalProps{
     modal: boolean,
     setModal: React.Dispatch<React.SetStateAction<boolean>>,
-    starships: StarshipsProps
+    people: PeoplesProps
 }
 
-export function ModalStarships(props: ModalStarships) {
+export function ModalPeoples(props: ModalProps) {
     return (
         <Modal
             animationType="slide"
@@ -35,28 +35,27 @@ export function ModalStarships(props: ModalStarships) {
                     }]}>
                         <ScrollView>
                             <View style={Styles.text_center}>
-                                <Text h1>{props.starships.name}</Text>
+                                <Text h1>{props.people.name}</Text>
                             </View>
                             <View style={Styles.divider}/>
                             <View style={Styles.text_center}>
-                                <Image source={StarshipsImage} style={{width: 100, height: 100}}/>
+                                <Image source={PeopleImage} style={{width: 100, height: 100}}/>
                             </View>
-                            <Text h4>Modelo: {props.starships.model}</Text>
-                            <Text h4>Fabricante: {props.starships.manufacturer}</Text>
-                            <Text h4>Custo: {props.starships.cost_in_credits}</Text>
-                            <Text h4>Comprimento: {props.starships.length}</Text>
-                            <Text h4>Velocidade máxima: {props.starships.max_atmosphering_speed}</Text>
-                            <Text h4>Quantidade de técnicos: {props.starships.crew}</Text>
-                            <Text h4>Quantidade de passageiros: {props.starships.passengers}</Text>
-                            <Text h4>Capacidade de carga: {props.starships.cargo_capacity}</Text>
-                            <Text h4>Consumíveis: {props.starships.consumables}</Text>
-                            <Text h4>MGLT: {props.starships.MGLT}</Text>
-                            <Text h4>Classe da nave: {props.starships.starship_class}</Text>
-                            <Text h4>Quantidade de pilotos: {props.starships.pilots.length}</Text>
-                            <Text h4>Filmes que apareceu: {props.starships.films.length}</Text>
-                            <Text h4>Data de criação: {props.starships.created}</Text>
-                            <Text h4>Data de Edição: {props.starships.edited}</Text>
-                            <Text h4>Url: {props.starships.url}</Text>
+                            <Text h4>Ano de nascimento: {props.people.birth_year}</Text>
+                            <Text h4>Cor dos olhos: {props.people.eye_color}</Text>
+                            <Text h4>Gênero Sexual: {props.people.gender}</Text>
+                            <Text h4>Cor de cabelo: {props.people.hair_color}</Text>
+                            <Text h4>Altura: {props.people.height}</Text>
+                            <Text h4>Peso: {props.people.mass}</Text>
+                            <Text h4>Cor da pele: {props.people.skin_color}</Text>
+                            <Text h4>Planeta natal: {props.people.homeworld}</Text>
+                            <Text h4>Filmes que apareceu: {props.people.films.length}</Text>
+                            <Text h4>Quantidade de espécies que apareceram: {props.people.species.length}</Text>
+                            <Text h4>Quantidade de naves que apareceram: {props.people.starships.length}</Text>
+                            <Text h4>Quantidade de veículos que apareceram: {props.people.vehicles.length}</Text>
+                            <Text h4>Url: {props.people.url}</Text>
+                            <Text h4>Data de criação: {props.people.created}</Text>
+                            <Text h4>Data de edição: {props.people.edited}</Text>
 
                             <Button
                                 title="Fechar"

@@ -4,7 +4,6 @@ import {ThemeProvider} from '@rneui/themed';
 import AnimatedSplash from "react-native-animated-splash-screen";
 
 import {Stack} from "./Routes";
-import { Starship } from './screens/starships';
 import Logo from './assets/images/logo.png'
 import {ProvedorPost} from "./context/community";
 
@@ -29,7 +28,7 @@ export default function App() {
                 logoWidth={150}
             >
                 <ProvedorPost>
-                    <Starship/>
+                    <Stack/>
                 </ProvedorPost>
             </AnimatedSplash>
         </ThemeProvider>

@@ -6,6 +6,7 @@ import AnimatedSplash from "react-native-animated-splash-screen";
 
 import {Stack} from "./Routes";
 import { Starship } from './screens/starships';
+import { Vehicles } from './screens/vehicles';
 
 
 import Logo from './assets/images/logo.png'

@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { ImageBackground, View, Text, FlatList, Linking, TouchableOpacity, Modal } from 'react-native';
 import { Botao } from '../../components/Botao';
-import { getPlanet} from '../../services/swapi';
+import { getPlanet } from '../../services/swapi';
 import { styles } from './styles';
 
 import BackgroundHome from "../../assets/images/backgroud_home.jpg"
@@ -17,7 +17,7 @@ export interface Planets {
     climate: string,
     terrain: string,
     surface_water: string,
-    residents:[],
+    residents: [],
     films: [],
     url: string,
     created: string,
@@ -81,19 +81,23 @@ export const Planets = () => {
 
                                 <>
                                     <View style={styles.textos}>
-                                        <TouchableOpacity
-                                            onPress={() => {
-                                                setModal(true)
-                                                setPlanetsItem(item)
-                                            }}
-                                        >
-                                            <Text style={styles.cardTitle}>Planeta: {item.name}</Text>
-                                            <Text style={styles.text}>Diâmetro: {item.diameter}</Text>
+                                            <TouchableOpacity style={{borderColor: 'white',
+                                            borderWidth: 2,
+                                            padding: 15,
+                                            borderRadius: 7,}}
+                                                onPress={() => {
+                                                    setModal(true)
+                                                    setPlanetsItem(item)
+                                                }}
+                                            >
+                                        
+                                        <Text style={styles.cardTitle}>Planeta: {item.name}</Text>
+                                        <Text style={styles.text}>Diâmetro: {item.diameter}</Text>
 
-                                        </TouchableOpacity>
+                                    </TouchableOpacity>
 
 
-                                    </View>
+                                </View>
 
 
 
@@ -103,16 +107,16 @@ export const Planets = () => {
                             }
                         />
 
-                    </>
+            </>
                 }
-                  <View style={styles.buttons}>
-                    <Botao titulo={'1'} corFundo={'transparent'} corTexto={'white'} onPress={() => setPage("?page=1")}></Botao>
-                    <Botao titulo={'2'} corFundo={'transparent'} corTexto={'white'} onPress={() => setPage('?page=2')}></Botao>
-                    <Botao titulo={'3'} corFundo={'transparent'} corTexto={'white'} onPress={() => setPage("?page=3")}></Botao>
-                    <Botao titulo={'4'} corFundo={'transparent'} corTexto={'white'} onPress={() => setPage('?page=4')}></Botao>
-                </View>
-
+            <View style={styles.buttons}>
+                <Botao titulo={'1'} corFundo={'transparent'} corTexto={'white'} onPress={() => setPage("?page=1")}></Botao>
+                <Botao titulo={'2'} corFundo={'transparent'} corTexto={'white'} onPress={() => setPage('?page=2')}></Botao>
+                <Botao titulo={'3'} corFundo={'transparent'} corTexto={'white'} onPress={() => setPage("?page=3")}></Botao>
+                <Botao titulo={'4'} corFundo={'transparent'} corTexto={'white'} onPress={() => setPage('?page=4')}></Botao>
             </View>
-        </ImageBackground>
+
+        </View>
+        </ImageBackground >
     )
 }

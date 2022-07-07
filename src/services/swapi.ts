@@ -18,6 +18,9 @@ export async function getRandomPlanet() {
 }
 
 export function getStarships(page?: string) {
+    if(page){
+        page = `?page=${page}`
+    }
     const url = `starships${page}`;
 
     return instance.get(url);
@@ -41,8 +44,13 @@ export function getPeople(page?: string) {
     return instance.get(url);
 }
 
-export function getPlanet(page?: string) {
-    const url = `planets${page}`;
+export function getPlanets(page?: string) {
+    if(page){
+        page = `?page=${page}`
+    }else{
+        page = ""
+    }
+    const url = `planets/${page}`;
 
     return instance.get(url);
 }

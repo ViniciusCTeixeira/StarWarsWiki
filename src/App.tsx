@@ -4,7 +4,6 @@ import {ThemeProvider} from '@rneui/themed';
 import AnimatedSplash from "react-native-animated-splash-screen";
 
 import {Stack} from "./Routes";
-
 import Logo from './assets/images/logo.png'
 import {ProvedorPost} from "./context/community";
 

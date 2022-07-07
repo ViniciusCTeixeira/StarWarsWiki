@@ -1,9 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { View, Text, FlatList, Linking, TouchableOpacity, Modal } from 'react-native';
+import { ImageBackground, View, Text, FlatList, Linking, TouchableOpacity, Modal } from 'react-native';
 import { Botao } from '../../components/Botao';
 import { StarshipModal } from '../../components/modais/ModalNaves';
 import { getStarships} from '../../services/swapi';
 import { styles } from './styles';
+import BackgroundHome from "../../assets/images/backgroud_home.jpg"
 
 
 export interface starship {
@@ -68,6 +69,7 @@ export const Starship = () => {
     
     
     return (
+        <ImageBackground source={BackgroundHome} resizeMode="cover" style={{flex: 1}}>
         <View style={styles.container}>
             <Text style={styles.title}>
                 Naves
@@ -115,12 +117,13 @@ export const Starship = () => {
             }
 
             <View style={styles.buttons}>
-                <Botao titulo={'1'} corFundo={'white'} corTexto={'black'} onPress={() => setPage("?page=1")}></Botao>
-                <Botao titulo={'2'} corFundo={'white'} corTexto={'black'} onPress={() => setPage('?page=2')}></Botao>
-                <Botao titulo={'3'} corFundo={'white'} corTexto={'black'} onPress={() => setPage("?page=3")}></Botao>
-                <Botao titulo={'4'} corFundo={'white'} corTexto={'black'} onPress={() => setPage('?page=4')}></Botao>
+                <Botao titulo={'1'} corFundo={'transparent'} corTexto={'white'} onPress={() => setPage("?page=1")}></Botao>
+                <Botao titulo={'2'} corFundo={'transparent'} corTexto={'white'} onPress={() => setPage('?page=2')}></Botao>
+                <Botao titulo={'3'} corFundo={'transparent'} corTexto={'white'} onPress={() => setPage("?page=3")}></Botao>
+                <Botao titulo={'4'} corFundo={'transparent'} corTexto={'white'} onPress={() => setPage('?page=4')}></Botao>
             </View>
 
         </View>
+        </ImageBackground>
     )
         }

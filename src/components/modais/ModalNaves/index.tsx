@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { Modal, ModalProps, Text, TouchableOpacity, View, Image } from 'react-native';
+import {ImageBackground, Modal, ModalProps, Text, TouchableOpacity, View, Image } from 'react-native';
 import { starship } from "../../../screens/starships";
 import Naves from "../../../assets/images/naves.png";
 import Styles from "../../../assets/styles";
 import { Button} from '@rneui/themed';
-
+import BackgroundHome from '../../../assets/images/backgroud_home.jpg'
 interface modalProps extends ModalProps{
     item: starship,
     modal: boolean,
@@ -27,12 +27,11 @@ export const StarshipModal = ({item, modal, setModal, ...rest}:modalProps) => {
             setModal(false)
         }}
     >
-        
+        <ImageBackground source={BackgroundHome} resizeMode="cover" style={{flex: 1}}>
         <TouchableOpacity onPress={() => setModal(false)}>
         <View style={[Styles.column, {
             width: "100%",
             borderRadius: 10,
-            backgroundColor: "rgba(169,169,169,0.65)",
             paddingHorizontal: 10,
             paddingVertical: 10
         }]}>
@@ -41,27 +40,31 @@ export const StarshipModal = ({item, modal, setModal, ...rest}:modalProps) => {
             </View>
             <View style={Styles.divider}/>
             <View style={Styles.text_center}>
-                <Image source={Naves} style={{width: 100, height: 100}}/>
+                <Image source={Naves} style={{width: 200, height: 200,
+                paddingEnd:50}}/>
             </View>
-            <Text>Modelo: {item.model }</Text>
-            <Text>Model: {item.manufacturer }</Text>
-            <Text>Model: {item.cost_in_credits }</Text>
-            <Text>Modelo: {item.passengers }</Text>
-            <Text>Model: {item.cargo_capacity }</Text>
-            <Text>Model: {item.consumables }</Text>
-            <Text>Modelo: {item.length }</Text>
-            <Text>Model: {item.max_atmosphering_speed }</Text>
-            <Text>Model: {item.crew}</Text>
-            <Text>Model: {item.hyperdrive_rating}</Text>
-            <Text>Model: {item.MGLT }</Text>
-            <Text>Modelo: {item.starship_class }</Text>
-            <Text>Model: {item.pilots }</Text>
-            <Text>Model: {item.films}</Text>
-            <Text>Modelo: {item.created }</Text>
-            <Text>Model: {item.edited}</Text>
-            <Text>Model: {item.url}</Text>
-        </View>
+            <View style={Styles.viewText}>
+            <Text style={Styles.text2}>Modelo: {item.model }</Text>
+            <Text style={Styles.text2}>Fabricante: {item.manufacturer }</Text>
+            <Text style={Styles.text2}>Custo: {item.cost_in_credits }</Text>
+            <Text style={Styles.text2}>Quantidade de passageiros: {item.passengers }</Text>
+            <Text style={Styles.text2}>Capacidade de carga: {item.cargo_capacity }</Text>
+            <Text style={Styles.text2}>Consumiveis: {item.consumables }</Text>
+            <Text style={Styles.text2}>Comprimento: {item.length }</Text>
+            <Text style={Styles.text2}>Velocidade máxima: {item.max_atmosphering_speed }</Text>
+            <Text style={Styles.text2}>Quantidade de técnicos: {item.crew}</Text>
+            <Text style={Styles.text2}>Classificação: {item.hyperdrive_rating}</Text>
+            <Text style={Styles.text2}>MGLT: {item.MGLT }</Text>
+            <Text style={Styles.text2}>Classe da nave: {item.starship_class }</Text>
+            <Text style={Styles.text2}>Pilotos: {item.pilots }</Text>
+            <Text style={Styles.text2}>Filmes: {item.films}</Text>
+            <Text style={Styles.text2}>Data de criação: {item.created }</Text>
+            <Text style={Styles.text2}>Data de edição: {item.edited}</Text>
+            <Text style={Styles.text2}>url: {item.url}</Text>
+            </View>
+            </View>
         </TouchableOpacity>
+        </ImageBackground>
         </Modal>
         </View>
     

@@ -5,7 +5,8 @@ export const styles = StyleSheet.create({
         padding: 15,
         borderRadius: 7,
         alignItems: 'center',
-        marginTop: 20
+        marginTop: 20,
+        backgroundColor:'black'
     },
     buttonText: {
         fontSize: 17,

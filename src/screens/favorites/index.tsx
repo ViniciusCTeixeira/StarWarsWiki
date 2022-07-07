@@ -18,7 +18,7 @@ export const Favorites = () => {
         setIsLoading(true)
         getFavoritos().then((res) => {
             setFilmsList(res);
-        }).finally(() => {setIsLoading(false); console.log(FilmsList);})
+        }).finally(() => {setIsLoading(false)})
 
 
     },[reload]);

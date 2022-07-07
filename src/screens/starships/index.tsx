@@ -111,7 +111,7 @@ export const Starship = () => {
 
                         }
                     />
-                    <StarshipModal item={starshipItem} modal={modal} setModal={setModal} />
+                    <StarshipModal item={starshipItem} modal={modal} setModal={setModal} loading={false} reload={false} setReload={setLoading} />
 
                 </>
             }

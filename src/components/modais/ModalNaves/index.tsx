@@ -60,7 +60,7 @@ export const StarshipModal = ({item, modal, setModal, ...rest}:modalProps) => {
             <Text style={Styles.text2}>Filmes: {item.films}</Text>
             <Text style={Styles.text2}>Data de criação: {item.created }</Text>
             <Text style={Styles.text2}>Data de edição: {item.edited}</Text>
-            <Text style={Styles.text2}>url: {item.url}</Text>
+            <Text style={Styles.text2}>URL: {item.url}</Text>
             </View>
             </View>
         </TouchableOpacity>

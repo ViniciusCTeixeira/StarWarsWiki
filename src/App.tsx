@@ -2,7 +2,6 @@ import React, {useEffect, useState} from 'react';
 import {ThemeProvider} from '@rneui/themed';
 
 import AnimatedSplash from "react-native-animated-splash-screen";
-import { Peoples } from './screens/peoples';
 import {Stack} from "./Routes";
 import Logo from './assets/images/logo.png'
 import {ProvedorPost} from "./context/community";
@@ -28,7 +27,7 @@ export default function App() {
                 logoWidth={150}
             >
                 <ProvedorPost>
-                    <Peoples/>
+                    <Stack/>
                 </ProvedorPost>
             </AnimatedSplash>
         </ThemeProvider>

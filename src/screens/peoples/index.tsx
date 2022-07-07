@@ -5,33 +5,15 @@ import { getPeople } from '../../services/swapi';
 import { styles } from './styles';
 import BackgroundHome from "../../assets/images/backgroud_home.jpg"
 
+import {PeoplesProps} from "../../models/peoples";
 
-export interface people {
-    name: string,
-    birth_year: string,
-    eye_color: string,
-    gender: string,
-    hair_color: string,
-    height: string,
-    mass: string,
-    skin_color: string,
-    homeworld: string,
-    films: [],
-    species: [],
-    starships:[],
-    vehicles:[],
-    url: string,
-    created: string,
-    edited: string,
-}
+export const Peoples = () => {
 
-export const People = () => {
-
-    const [peopleList, setPeopleList] = useState<people[]>([]);
+    const [peopleList, setPeopleList] = useState<PeoplesProps[]>([]);
     const [page, setPage] = useState<string>("");
     const [loading, setLoading] = useState<boolean>(true);
     const [modal, setModal] = useState<boolean>(false);
-    const [peopleItem, setPeopleItem] = useState<people>(
+    const [peopleItem, setPeopleItem] = useState<PeoplesProps>(
         {
             name: "",
             birth_year:" ",

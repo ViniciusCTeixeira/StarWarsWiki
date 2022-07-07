@@ -4,35 +4,17 @@ import { Botao } from '../../components/Botao';
 import { getVehicles } from '../../services/swapi';
 import {styles} from '../vehicles/styles'
     
-    import BackgroundHome from "../../assets/images/backgroud_home.jpg"
+import BackgroundHome from "../../assets/images/backgroud_home.jpg"
 
-
-export interface vehicles {
-    name: string,
-    model: string,
-    manufacturer: string,
-    cost_in_credits: string,
-    length: string,
-    max_atmosphering_speed: string,
-    crew: string,
-    passengers: string,
-    cargo_capacity: string,
-    consumables: string,
-    vehicle_class: string,
-    pilots: [],
-    films: [],
-    created: string,
-    edited: string,
-    url: string
-}
+import {VehiclesProps} from "../../models/vehicles";
 
 export const Vehicles = () => {
 
-    const [vehiclesList, setVehiclesList] = useState<vehicles[]>([]);
+    const [vehiclesList, setVehiclesList] = useState<VehiclesProps[]>([]);
     const [page, setPage] = useState<string>("");
     const [loading, setLoading] = useState<boolean>(true);
     const [modal, setModal] = useState<boolean>(false);
-    const [vehiclesItem, setVehiclesItem] = useState<vehicles>(
+    const [vehiclesItem, setVehiclesItem] = useState<VehiclesProps>(
         {
             name: "",
             model: "",

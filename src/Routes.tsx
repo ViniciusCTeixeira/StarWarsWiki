@@ -9,7 +9,7 @@ import {Community} from "./screens/community";
 import {StatusBar} from "react-native";
 import {Films} from "./screens/films";
 import {Planets} from "./screens/planets";
-import {People} from "./screens/people";
+import {Peoples} from "./screens/peoples";
 import {Vehicles} from "./screens/vehicles";
 import {Starship} from "./screens/starships";
 
@@ -50,7 +50,7 @@ function Tab() {
     return (
         <TabNav.Navigator initialRouteName="Planets" screenOptions={{headerShown: false}}>
             <TabNav.Screen name="Planets" component={Planets} />
-            <TabNav.Screen name="People" component={People} />
+            <TabNav.Screen name="People" component={Peoples} />
             <TabNav.Screen name="Films" component={Films} />
             <TabNav.Screen name="Starships" component={Starship} />
             <TabNav.Screen name="Vehicles" component={Vehicles} />

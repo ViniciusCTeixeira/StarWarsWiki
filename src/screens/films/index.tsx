@@ -1,35 +1,19 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { ImageBackground, View, Text, FlatList, Linking, TouchableOpacity, Modal } from 'react-native';
-import { Botao } from '../../components/Botao';
 import { getFilms } from '../../services/swapi';
 import { styles } from './styles';
 
+import {FilmsProps} from "../../models/films";
+
 import BackgroundHome from "../../assets/images/backgroud_home.jpg"
-
-
-export interface Films {
-    title: string,
-    episode_id: number,
-    opening_crawl: string,
-    director: string,
-    producer: string,
-    species: [],
-    starships: [],
-    vehicles: [],
-    characters: [],
-    planets: [],
-    url: string,
-    created: string,
-    edited: string,
-}
 
 export const Films = () => {
 
-    const [FilmsList, setFilmsList] = useState<Films[]>([]);
+    const [FilmsList, setFilmsList] = useState<FilmsProps[]>([]);
     const [page, setPage] = useState<string>("");
     const [loading, setLoading] = useState<boolean>(true);
     const [modal, setModal] = useState<boolean>(false);
-    const [filmsItem, setFilmsItem] = useState<Films>(
+    const [filmsItem, setFilmsItem] = useState<FilmsProps>(
         {
             title: "",
             episode_id: null,

@@ -6,35 +6,15 @@ import {getStarships} from '../../services/swapi';
 import {styles} from './styles';
 import BackgroundHome from "../../assets/images/backgroud_home.jpg"
 
-
-export interface starship {
-    name: string,
-    model: string,
-    manufacturer: string,
-    cost_in_credits: string,
-    length: string,
-    max_atmosphering_speed: string,
-    crew: string,
-    passengers: string,
-    cargo_capacity: string,
-    consumables: string,
-    hyperdrive_rating: string,
-    MGLT: string,
-    starship_class: string,
-    pilots: [],
-    films: [],
-    created: string,
-    edited: string,
-    url: string
-}
+import {StarshipsProps} from "../../models/starships";
 
 export const Starship = () => {
 
-    const [starShipList, setStarShipList] = useState<starship[]>([]);
+    const [starShipList, setStarShipList] = useState<StarshipsProps[]>([]);
     const [page, setPage] = useState<string>("");
     const [loading, setLoading] = useState<boolean>(true);
     const [modal, setModal] = useState<boolean>(false);
-    const [starshipItem, setStarshipItem] = useState<starship>(
+    const [starshipItem, setStarshipItem] = useState<StarshipsProps>(
         {
             name: "",
             model: "",

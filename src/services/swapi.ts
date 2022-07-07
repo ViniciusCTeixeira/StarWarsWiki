@@ -33,7 +33,12 @@ export function getVehicles(page?: string) {
 }
 
 export function getFilms(page?: string) {
-    const url = `films${page}`;
+    if(page){
+        page = `?page=${page}`
+    }else{
+        page = ""
+    }
+    const url = `films/${page}`;
 
     return instance.get(url);
 }

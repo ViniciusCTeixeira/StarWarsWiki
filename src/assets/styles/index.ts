@@ -21,6 +21,12 @@ const Styles = StyleSheet.create({
         borderBottomColor: 'black',
         borderBottomWidth: 1,
         marginVertical: 5,
+    },
+    text2:{
+        color:'white'
+    },
+    viewText:{
+        marginTop:30
     }
 });
 

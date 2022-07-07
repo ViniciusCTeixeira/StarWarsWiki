@@ -3,8 +3,9 @@ import { ImageBackground, View, Text, FlatList, Linking, TouchableOpacity, Modal
 import { Botao } from '../../components/Botao';
 import { StarshipModal } from '../../components/modais/ModalNaves';
 import { getStarships} from '../../services/swapi';
-import { styles } from './styles';
-import BackgroundHome from "../../assets/images/backgroud_home.jpg"
+import {styles} from '../vehicles/styles'
+    
+    import BackgroundHome from "../../assets/images/backgroud_home.jpg"
 
 
 export interface starship {
@@ -18,9 +19,7 @@ export interface starship {
     passengers: string,
     cargo_capacity: string,
     consumables: string,
-    hyperdrive_rating: string,
-    MGLT: string,
-    starship_class: string,
+    vehicle_class: string,
     pilots: [],
     films: [],
     created: string,
@@ -28,7 +27,7 @@ export interface starship {
     url: string
 }
 
-export const Starship = () => {
+export const Vehicles = () => {
 
     const [starShipList, setStarShipList] = useState<starship[]>([]);
     const [page, setPage] = useState<string>("");
@@ -46,9 +45,7 @@ export const Starship = () => {
             passengers: "",
             cargo_capacity: "",
             consumables: "",
-            hyperdrive_rating: "",
-            MGLT: "",
-            starship_class: "",
+            vehicle_class: "",
             pilots: [],
             films: [],
             created: "",
@@ -72,7 +69,7 @@ export const Starship = () => {
         <ImageBackground source={BackgroundHome} resizeMode="cover" style={{flex: 1}}>
         <View style={styles.container}>
             <Text style={styles.title}>
-                Naves
+                Veículos
             </Text>
 
 
@@ -96,7 +93,7 @@ export const Starship = () => {
                                             setStarshipItem(item)
                                         }}
                                     >
-                                        <Text style={styles.cardTitle}>Nave: {item.name}</Text>
+                                        <Text style={styles.cardTitle}>Veículo: {item.name}</Text>
                                         <Text style={styles.text}>Modelo: {item.model}</Text>
 
                                     </TouchableOpacity>
@@ -111,7 +108,6 @@ export const Starship = () => {
 
                         }
                     />
-                    <StarshipModal item={starshipItem} modal={modal} setModal={setModal} loading={false} reload={false} setReload={setLoading} />
 
                 </>
             }

@@ -4,7 +4,7 @@ import Styles from "../../assets/styles";
 import {Button, Text} from "@rneui/themed";
 
 import {PeoplesProps } from '../../models/peoples';
-import PeopleImage from "../../assets/images/people.jpg";
+import PeopleImage from "../../assets/images/yoda.png";
 import BackgroundHome from "../../assets/images/backgroud_home.jpg";
 
 interface ModalProps{

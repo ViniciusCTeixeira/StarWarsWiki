@@ -18,9 +18,9 @@ export async function getRandomPlanet() {
 }
 
 export function getStarships(page?: string) {
-    if(page){
+    if (page) {
         page = `?page=${page}`
-    }else{
+    } else {
         page = ""
     }
     const url = `starships${page}`;
@@ -28,21 +28,21 @@ export function getStarships(page?: string) {
     return instance.get(url);
 }
 
-export async function getVehicles(page?: string) {    
-        if(page){
-            page = `?page=${page}`
-        }else{
-            page=""
-        }
-        const url = `vehicles${page}`;
-    
-        return instance.get(url);
+export async function getVehicles(page?: string) {
+    if (page) {
+        page = `?page=${page}`
+    } else {
+        page = ""
+    }
+    const url = `vehicles${page}`;
+
+    return instance.get(url);
 }
 
 export function getFilms(page?: string) {
-    if(page){
+    if (page) {
         page = `?page=${page}`
-    }else{
+    } else {
         page = ""
     }
     const url = `films/${page}`;
@@ -51,9 +51,9 @@ export function getFilms(page?: string) {
 }
 
 export function getPeoples(page?: string) {
-    if(page){
+    if (page) {
         page = `?page=${page}`
-    }else{
+    } else {
         page = ""
     }
     const url = `people${page}`;
@@ -62,9 +62,9 @@ export function getPeoples(page?: string) {
 }
 
 export function getPlanets(page?: string) {
-    if(page){
+    if (page) {
         page = `?page=${page}`
-    }else{
+    } else {
         page = ""
     }
     const url = `planets/${page}`;

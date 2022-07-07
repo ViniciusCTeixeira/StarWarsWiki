@@ -7,7 +7,7 @@ import Styles from "../../assets/styles";
 import { getPeoples } from '../../services/swapi';
 
 import BackgroundHome from "../../assets/images/backgroud_home.jpg"
-import PeoplesImage from "../../assets/images/people.jpg"
+import PeoplesImage from "../../assets/images/yoda.png"
 import { ModalPeoples } from '../../components/peoples/modal';
 
 import { PeoplesProps } from '../../models/peoples';

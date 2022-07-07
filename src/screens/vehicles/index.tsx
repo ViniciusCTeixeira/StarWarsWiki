@@ -1,14 +1,13 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { ImageBackground, View, Text, FlatList, Linking, TouchableOpacity, Modal } from 'react-native';
 import { Botao } from '../../components/Botao';
-import { StarshipModal } from '../../components/modais/ModalNaves';
-import { getStarships} from '../../services/swapi';
+import { getVehicles } from '../../services/swapi';
 import {styles} from '../vehicles/styles'
     
     import BackgroundHome from "../../assets/images/backgroud_home.jpg"
 
 
-export interface starship {
+export interface vehicles {
     name: string,
     model: string,
     manufacturer: string,
@@ -29,11 +28,11 @@ export interface starship {
 
 export const Vehicles = () => {
 
-    const [starShipList, setStarShipList] = useState<starship[]>([]);
+    const [vehiclesList, setVehiclesList] = useState<vehicles[]>([]);
     const [page, setPage] = useState<string>("");
     const [loading, setLoading] = useState<boolean>(true);
     const [modal, setModal] = useState<boolean>(false);
-    const [starshipItem, setStarshipItem] = useState<starship>(
+    const [vehiclesItem, setVehiclesItem] = useState<vehicles>(
         {
             name: "",
             model: "",
@@ -56,8 +55,8 @@ export const Vehicles = () => {
 
     useEffect(() => {
         setLoading(true);
-        getStarships(page).then((res) => {
-            setStarShipList(res.data.results);
+        getVehicles(page).then((res) => {
+            setVehiclesList(res.data.results);
 
         }).catch((err) => {
             console.log(err)
@@ -80,7 +79,7 @@ export const Vehicles = () => {
                 :
                 <>
                     <FlatList
-                        data={starShipList}
+                        data={vehiclesList}
                         showsVerticalScrollIndicator={false}
 
                         renderItem={({ item, index }) => (
@@ -90,7 +89,7 @@ export const Vehicles = () => {
                                     <TouchableOpacity
                                         onPress={() => {
                                             setModal(true)
-                                            setStarshipItem(item)
+                                            setVehiclesItem(item)
                                         }}
                                     >
                                         <Text style={styles.cardTitle}>Veículo: {item.name}</Text>

@@ -1,22 +1,22 @@
-import React, {useEffect, useState} from 'react';
-import {ImageBackground, View, ScrollView, Image} from "react-native";
-import {Button} from '@rneui/themed';
-import {SafeAreaView} from 'react-native-safe-area-context';
+import React, { useEffect, useState } from 'react';
+import { ImageBackground, View, ScrollView, Image } from "react-native";
+import { Button } from '@rneui/themed';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 import Styles from "../../assets/styles";
-import LogoImage from "../../assets/images/logo.png";
+import LogoImage from "../../assets/images/logo2.png";
 
-import BackgroundHome from "../../assets/images/backgroud_home.jpg";
+import BackgroundHome from "../../assets/images/backgroud_home2.jpg";
 
-import {CardPlanet} from "../../components/planets/card";
-import {ModalPlanets} from "../../components/planets/modal";
+import { CardPlanet } from "../../components/planets/card";
+import { ModalPlanets } from "../../components/planets/modal";
 
-import {getRandomPlanet} from "../../services/swapi";
+import { getRandomPlanet } from "../../services/swapi";
 
-import {PlanetsProps} from "../../models/planets";
+import { PlanetsProps } from "../../models/planets";
 
-import {propsNavigationStack} from "../../Routes";
-import type {NativeStackScreenProps} from '@react-navigation/native-stack';
+import { propsNavigationStack } from "../../Routes";
+import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 
 type HomeProps = NativeStackScreenProps<propsNavigationStack, 'Home'>;
 
@@ -41,16 +41,16 @@ export function Home(props: HomeProps) {
 
     return (
         <SafeAreaView style={Styles.container} edges={['top', 'left', 'right']}>
-            <ImageBackground source={BackgroundHome} resizeMode="cover" style={{flex: 1}}>
+            <ImageBackground source={BackgroundHome} resizeMode="cover" style={{ flex: 1 }}>
                 <ScrollView>
-                    <View style={{paddingHorizontal: 10, marginVertical: 10}}>
+                    <View style={{ paddingHorizontal: 15, marginVertical: 30 }}>
                         <View style={Styles.text_center}>
-                            <Image source={LogoImage} style={{width: 100, height: 100}}/>
+                            <Image source={LogoImage} style={{  width: 100, height: 100 }} />
                         </View>
-                        {isLoading && <CardPlanet planet={planet} reload={reload} setReload={setReload} loading={loading} setModal={setModal}/>}
-                        <View style={[Styles.column, {width: '100%', marginVertical: 10}]}>
-                            <View style={[Styles.row, {width: '100%', justifyContent: "space-between"}]}>
-                                <View style={{flex: 0.48}}>
+                        {isLoading && <CardPlanet planet={planet} reload={reload} setReload={setReload} loading={loading} setModal={setModal} />}
+                        <View style={[Styles.column, { width: '100%', marginVertical: 10 }]}>
+                            <View style={[Styles.row, { width: '100%', justifyContent: "space-between" }]}>
+                                <View style={{ flex: 0.48 }}>
                                     <Button
                                         title="Favoritos"
                                         loading={false}
@@ -61,11 +61,11 @@ export function Home(props: HomeProps) {
                                             width: '100%',
                                             height: 100
                                         }}
-                                        titleStyle={{fontWeight: 'bold', fontSize: 23}}
-                                        onPress={() => {props.navigation.navigate("Favorites")}}
+                                        titleStyle={{ fontWeight: 'bold', fontSize: 23 }}
+                                        onPress={() => { props.navigation.navigate("Favorites") }}
                                     />
                                 </View>
-                                <View style={{flex: 0.48}}>
+                                <View style={{ flex: 0.48 }}>
                                     <Button
                                         title="Comunidade"
                                         loading={false}
@@ -76,8 +76,8 @@ export function Home(props: HomeProps) {
                                             width: '100%',
                                             height: 100
                                         }}
-                                        titleStyle={{fontWeight: 'bold', fontSize: 23}}
-                                        onPress={() => {props.navigation.navigate("Community")}}
+                                        titleStyle={{ fontWeight: 'bold', fontSize: 23 }}
+                                        onPress={() => { props.navigation.navigate("Community") }}
                                     />
                                 </View>
                             </View>
@@ -97,13 +97,13 @@ export function Home(props: HomeProps) {
                                     marginTop: 10,
                                     height: 60
                                 }}
-                                titleStyle={{fontWeight: 'bold', fontSize: 23}}
-                                onPress={() => {props.navigation.navigate("Internal")}}
+                                titleStyle={{ fontWeight: 'bold', fontSize: 23 }}
+                                onPress={() => { props.navigation.navigate("Internal") }}
                             />
                         </View>
                     </View>
                 </ScrollView>
-                {isLoading && <ModalPlanets modal={modal} setModal={setModal} planet={planet}/>}
+                {isLoading && <ModalPlanets modal={modal} setModal={setModal} planet={planet} />}
             </ImageBackground>
         </SafeAreaView>
     )

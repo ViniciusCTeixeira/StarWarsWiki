@@ -1,11 +1,17 @@
+import React from "react";
 import {NavigationContainer} from "@react-navigation/native";
-import {createNativeStackNavigator, NativeStackScreenProps} from '@react-navigation/native-stack';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 
 import {Home} from './screens/home'
 import {Community} from "./screens/community";
 import {StatusBar} from "react-native";
-import React from "react";
+import {Films} from "./screens/films";
+import {Planets} from "./screens/planets";
+import {People} from "./screens/people";
+import {Vehicles} from "./screens/vehicles";
+import {Starship} from "./screens/starships";
 
 export type propsNavigationStack = {
     Home: undefined
@@ -13,21 +19,41 @@ export type propsNavigationStack = {
     Favorites: undefined
     Internal: undefined
 }
+export type propsNavigationTab = {
+    Films: undefined
+    People: undefined
+    Planets: undefined
+    Starships: undefined
+    Vehicles: undefined
+}
 
-const {Screen, Navigator} = createNativeStackNavigator<propsNavigationStack>();
+const TabNav = createBottomTabNavigator<propsNavigationTab>();
+const StackNav = createNativeStackNavigator<propsNavigationStack>();
 
 export function Stack() {
     return (
         <SafeAreaProvider>
             <StatusBar backgroundColor="rgb(50, 50, 120)" barStyle="light-content"/>
             <NavigationContainer>
-                <Navigator initialRouteName="Home" screenOptions={{headerShown: false}}>
-                    <Screen name="Home" component={Home} options={{title: 'Home'}}/>
-                    <Screen name="Community" component={Community} options={{title: 'Comunidade', headerShown: true}}/>
-                    <Screen name="Favorites" component={Home} options={{title: 'Favoritos'}}/>
-                    <Screen name="Internal" component={Home}/>
-                </Navigator>
+                <StackNav.Navigator initialRouteName="Home" screenOptions={{headerShown: false}}>
+                    <StackNav.Screen name="Home" component={Home} options={{title: 'Home'}}/>
+                    <StackNav.Screen name="Community" component={Community} options={{title: 'Comunidade', headerShown: true}}/>
+                    <StackNav.Screen name="Favorites" component={Home} options={{title: 'Favoritos', headerShown: true}}/>
+                    <StackNav.Screen name="Internal" component={Tab} options={{title: 'Navegação', headerShown: true}}/>
+                </StackNav.Navigator>
             </NavigationContainer>
         </SafeAreaProvider>
+    );
+}
+
+function Tab() {
+    return (
+        <TabNav.Navigator initialRouteName="Planets" screenOptions={{headerShown: false}}>
+            <TabNav.Screen name="Planets" component={Planets} />
+            <TabNav.Screen name="People" component={People} />
+            <TabNav.Screen name="Films" component={Films} />
+            <TabNav.Screen name="Starships" component={Starship} />
+            <TabNav.Screen name="Vehicles" component={Vehicles} />
+        </TabNav.Navigator>
     );
 }

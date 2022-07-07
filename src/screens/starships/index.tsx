@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { View, Text, FlatList, Linking, TouchableOpacity, Modal } from 'react-native';
 import { Botao } from '../../components/Botao';
-import { StarshipModal } from '../../components/modais/ModalAtributos';
+import { StarshipModal } from '../../components/modais/ModalNaves';
 import { getStarships} from '../../services/swapi';
 import { styles } from './styles';
 
@@ -87,7 +87,7 @@ export const Starship = () => {
                         renderItem={({ item, index }) => (
 
                             <>
-                                <View>
+                                <View style={styles.textos}>
                                     <TouchableOpacity
                                         onPress={() => {
                                             setModal(true)

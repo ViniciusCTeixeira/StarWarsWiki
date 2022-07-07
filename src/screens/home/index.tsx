@@ -6,7 +6,7 @@ import {SafeAreaView} from 'react-native-safe-area-context';
 import Styles from "../../assets/styles";
 import LogoImage from "../../assets/images/logo.png";
 
-import BackgroundHome from "../../assets/images/backgroud_home.jpg"
+import BackgroundHome from "../../assets/images/backgroud_home.jpg";
 
 import {CardPlanet} from "../../components/planets/card";
 

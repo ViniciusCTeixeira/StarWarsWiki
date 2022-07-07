@@ -29,3 +29,9 @@ export function getVehicles(page?: string) {
     return instance.get(url);
 }
 
+export function getFilms(page?: string) {
+    const url = `films${page}`;
+
+    return instance.get(url);
+}
+

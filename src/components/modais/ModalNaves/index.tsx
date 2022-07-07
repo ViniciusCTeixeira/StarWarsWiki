@@ -3,7 +3,6 @@ import {ImageBackground, Modal, ModalProps, Text, TouchableOpacity, View, Image 
 import { starship } from "../../../screens/starships";
 import Naves from "../../../assets/images/naves.png";
 import Styles from "../../../assets/styles";
-import { Button} from '@rneui/themed';
 import BackgroundHome from '../../../assets/images/backgroud_home.jpg'
 interface modalProps extends ModalProps{
     item: starship,

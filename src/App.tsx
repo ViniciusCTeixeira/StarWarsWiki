@@ -7,6 +7,7 @@ import {Stack} from "./Routes";
 
 import Logo from './assets/images/logo.png'
 import {ProvedorPost} from "./context/community";
+import { Planets } from './screens/planets';
 
 export default function App() {
     const [isLoaded, setIsLoaded] = useState<boolean>(false);
@@ -28,7 +29,7 @@ export default function App() {
                 logoWidth={150}
             >
                 <ProvedorPost>
-                    <Stack/>
+                    <Planets/>
                 </ProvedorPost>
             </AnimatedSplash>
         </ThemeProvider>

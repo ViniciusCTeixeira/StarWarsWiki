@@ -9,6 +9,7 @@ import { Starship } from './screens/starships';
 import { Vehicles } from './screens/vehicles';
 import { Films } from './screens/films';
 import { People } from './screens/people';
+import { Planets } from './screens/planets';
 
 import Logo from './assets/images/logo.png'
 

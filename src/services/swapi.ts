@@ -35,3 +35,15 @@ export function getFilms(page?: string) {
     return instance.get(url);
 }
 
+export function getPeople(page?: string) {
+    const url = `people${page}`;
+
+    return instance.get(url);
+}
+
+export function getPlanet(page?: string) {
+    const url = `planets${page}`;
+
+    return instance.get(url);
+}
+

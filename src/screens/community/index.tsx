@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import {Image, ImageBackground, Modal, ScrollView, TouchableOpacity, View} from "react-native";
 import {Text, Button} from '@rneui/themed';
 
@@ -11,8 +11,12 @@ import BackgroundHome from "../../assets/images/backgroud_home.jpg";
 import {PostCard} from "../../components/community/post"
 import {ModalPost} from "../../components/community/modal";
 
+import {ContextoPost} from "../../context/community";
+
 export function Community() {
-    const [post, setPost] = useState<PostProps[]>([]);
+    const post = useContext(ContextoPost).post;
+    const savePost = useContext(ContextoPost).savePost;
+
     const [title, setTitle] = useState<string>();
     const [body, setBody] = useState<string>();
     const [isPosting, setIsPosting] = useState<boolean>(false);
@@ -24,7 +28,8 @@ export function Community() {
         } else {
             setModal(false)
             sendPost(title, body, 1).then((res) => {
-                setPost([...post, res.data])
+                const temp: PostProps = res.data;
+                savePost(temp)
             }).catch((err) => {
                 alert("Não foi possível salvar o seu post.")
             }).finally(() => {
@@ -37,17 +42,13 @@ export function Community() {
 
     }
 
-    useEffect(() => {
-
-    }, [post])
-
     return (
         <View style={Styles.container}>
             <ImageBackground source={BackgroundHome} resizeMode="cover" style={{flex: 1}}>
                 <ScrollView indicatorStyle={"white"}>
                     <View style={{paddingHorizontal: 10, marginVertical: 10}}>
-                        {post.map((item) => {
-                            return <PostCard id={item.id} title={item.title} body={item.body} userId={item.userId}/>
+                        {post.map((item, index) => {
+                            return <PostCard id={item.id} title={item.title} body={item.body} userId={item.userId} key={index}/>
                         })}
                     </View>
                 </ScrollView>
@@ -68,10 +69,14 @@ export function Community() {
                             width: '100%',
                         }}
                         titleStyle={{fontWeight: 'bold', fontSize: 23}}
-                        onPress={() => {setModal(true); setIsPosting(true)}}
+                        onPress={() => {
+                            setModal(true);
+                            setIsPosting(true)
+                        }}
                     />
                 </View>
-                <ModalPost modal={modal} setModal={setModal} setIsPosting={setIsPosting} makePost={makePost} setTitle={setTitle} setBody={setBody}/>
+                <ModalPost modal={modal} setModal={setModal} setIsPosting={setIsPosting} makePost={makePost}
+                           setTitle={setTitle} setBody={setBody}/>
             </ImageBackground>
         </View>
     )

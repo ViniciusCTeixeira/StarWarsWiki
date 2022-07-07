@@ -7,6 +7,7 @@ import {Stack} from "./Routes";
 
 
 import Logo from './assets/images/logo.png'
+import {ProvedorPost} from "./context/community";
 
 export default function App() {
     const [isLoaded, setIsLoaded] = useState<boolean>(false);
@@ -27,7 +28,9 @@ export default function App() {
                 logoHeight={150}
                 logoWidth={150}
             >
-                <Stack/>
+                <ProvedorPost>
+                    <Stack/>
+                </ProvedorPost>
             </AnimatedSplash>
         </ThemeProvider>
     );

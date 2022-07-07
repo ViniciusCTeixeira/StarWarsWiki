@@ -3,17 +3,17 @@ import {View, Modal, Image, ImageBackground, ScrollView} from "react-native";
 import Styles from "../../assets/styles";
 import {Button, Text} from "@rneui/themed";
 
-import { StarshipsProps } from '../../models/starships';
-import StarshipsImage from "../../assets/images/naves.png";
+import {VehiclesProps} from "../../models/vehicles";
+import VehiclesImage from "../../assets/images/vehicles.png";
 import BackgroundHome from "../../assets/images/backgroud_home.jpg";
 
-interface ModalStarships {
+interface ModalProps {
     modal: boolean,
     setModal: React.Dispatch<React.SetStateAction<boolean>>,
-    starships: StarshipsProps
+    vehicles: VehiclesProps
 }
 
-export function ModalStarships(props: ModalStarships) {
+export function ModalVehicles(props: ModalProps) {
     return (
         <Modal
             animationType="slide"
@@ -35,28 +35,24 @@ export function ModalStarships(props: ModalStarships) {
                     }]}>
                         <ScrollView>
                             <View style={Styles.text_center}>
-                                <Text h1>{props.starships.name}</Text>
+                                <Text h1>{props.vehicles.name}</Text>
                             </View>
                             <View style={Styles.divider}/>
                             <View style={Styles.text_center}>
-                                <Image source={StarshipsImage} style={{height: 127, width: 211}}/>
+                                <Image source={VehiclesImage} style={{width: 100, height: 100}}/>
                             </View>
-                            <Text h4>Modelo: {props.starships.model}</Text>
-                            <Text h4>Fabricante: {props.starships.manufacturer}</Text>
-                            <Text h4>Custo: {props.starships.cost_in_credits}</Text>
-                            <Text h4>Comprimento: {props.starships.length}</Text>
-                            <Text h4>Velocidade máxima: {props.starships.max_atmosphering_speed}</Text>
-                            <Text h4>Quantidade de técnicos: {props.starships.crew}</Text>
-                            <Text h4>Quantidade de passageiros: {props.starships.passengers}</Text>
-                            <Text h4>Capacidade de carga: {props.starships.cargo_capacity}</Text>
-                            <Text h4>Consumíveis: {props.starships.consumables}</Text>
-                            <Text h4>MGLT: {props.starships.MGLT}</Text>
-                            <Text h4>Classe da nave: {props.starships.starship_class}</Text>
-                            <Text h4>Quantidade de pilotos: {props.starships.pilots.length}</Text>
-                            <Text h4>Filmes que apareceu: {props.starships.films.length}</Text>
-                            <Text h4>Data de criação: {props.starships.created}</Text>
-                            <Text h4>Data de Edição: {props.starships.edited}</Text>
-                            <Text h4>Url: {props.starships.url}</Text>
+                            <Text h4>Modelo: {props.vehicles.model}</Text>
+                            <Text h4>Fabricante: {props.vehicles.manufacturer}</Text>
+                            <Text h4>Custo em créditos: {props.vehicles.cost_in_credits}</Text>
+                            <Text h4>Comprimento: {props.vehicles.length}</Text>
+                            <Text h4>Velocidade média da atmosfera: {props.vehicles.max_atmosphering_speed}</Text>
+                            <Text h4>Equipe técnica: {props.vehicles.crew}</Text>
+                            <Text h4>Passageiros: {props.vehicles.passengers}</Text>
+                            <Text h4>Capacidade de carga: {props.vehicles.cargo_capacity}</Text>
+                            <Text h4>Consumíveis: {props.vehicles.consumables}</Text>
+                            <Text h4>Classe do veículo: {props.vehicles.vehicle_class}</Text>
+                            <Text h4>Pilotos: {props.vehicles.pilots.length}</Text>
+                            <Text h4>Filmes que apareceu: {props.vehicles.films.length}</Text>
 
                             <Button
                                 title="Fechar"

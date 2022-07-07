@@ -7,6 +7,8 @@ import {FilmsProps} from "../../models/films";
 import PlanetImage from "../../assets/images/planet.png";
 import BackgroundHome from "../../assets/images/backgroud_home.jpg";
 
+import {addFavoritos} from "../../services/database";
+
 interface ModalProps {
     modal: boolean,
     setModal: React.Dispatch<React.SetStateAction<boolean>>,
@@ -46,27 +48,52 @@ export function ModalFilms(props: ModalProps) {
                             <Text h4>Abertura:</Text>
                             <Text h4>{props.filmes.opening_crawl}</Text>
 
-                            <Button
-                                title="Fechar"
-                                loading={false}
-                                icon={{
-                                    name: 'cancel',
-                                    type: 'material',
-                                    size: 30,
-                                    color: 'white',
-                                }}
-                                iconContainerStyle={{marginRight: 10}}
-                                buttonStyle={{
-                                    backgroundColor: 'rgba(50, 50, 120, 0.8)',
-                                    borderRadius: 5,
-                                    marginTop: 10,
-                                    width: '100%',
-                                }}
-                                titleStyle={{fontWeight: 'bold', fontSize: 23}}
-                                onPress={() => {
-                                    props.setModal(false)
-                                }}
-                            />
+                            <View style={[Styles.row, { width: '100%', justifyContent: "space-between" }]}>
+                                <View style={{ flex: 0.48 }}>
+                                    <Button
+                                        title="Salvar"
+                                        loading={false}
+                                        icon={{
+                                            name: 'favorite',
+                                            type: 'material',
+                                            size: 30,
+                                            color: 'white',
+                                        }}
+                                        iconContainerStyle={{marginRight: 10}}
+                                        buttonStyle={{
+                                            backgroundColor: 'rgba(50, 50, 120, 0.8)',
+                                            borderRadius: 5,
+                                            marginTop: 10,
+                                            width: '100%',
+                                        }}
+                                        titleStyle={{ fontWeight: 'bold', fontSize: 23 }}
+                                        onPress={() => {addFavoritos(props.filmes); props.setModal(false)}}
+                                    />
+                                </View>
+                                <View style={{ flex: 0.48 }}>
+                                    <Button
+                                        title="Fechar"
+                                        loading={false}
+                                        icon={{
+                                            name: 'cancel',
+                                            type: 'material',
+                                            size: 30,
+                                            color: 'white',
+                                        }}
+                                        iconContainerStyle={{marginRight: 10}}
+                                        buttonStyle={{
+                                            backgroundColor: 'rgba(50, 50, 120, 0.8)',
+                                            borderRadius: 5,
+                                            marginTop: 10,
+                                            width: '100%',
+                                        }}
+                                        titleStyle={{fontWeight: 'bold', fontSize: 23}}
+                                        onPress={() => {
+                                            props.setModal(false)
+                                        }}
+                                    />
+                                </View>
+                            </View>
                         </ScrollView>
                     </View>
                 </View>

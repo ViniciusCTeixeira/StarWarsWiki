@@ -20,7 +20,7 @@ import { Planets } from "./screens/planets";
 import { Peoples } from "./screens/peoples";
 import { Vehicles } from "./screens/vehicles";
 import { Starship } from "./screens/starships";
-import { Icon } from "@rneui/base";
+import { Favorites } from "./screens/favorites";
 
 export type propsNavigationStack = {
     Home: undefined
@@ -53,7 +53,7 @@ export function Stack() {
                 }}>
                     <StackNav.Screen name="Home" component={Home} options={{ title: 'Home' }} />
                     <StackNav.Screen name="Community" component={Community} options={{ title: 'Comunidade', headerShown: true }} />
-                    <StackNav.Screen name="Favorites" component={Home} options={{ title: 'Favoritos', headerShown: true }} />
+                    <StackNav.Screen name="Favorites" component={Favorites} options={{ title: 'Favoritos', headerShown: true }} />
                     <StackNav.Screen name="Internal" component={Tab} options={{
                         title: 'Navegação', headerShown: true
                     }} />

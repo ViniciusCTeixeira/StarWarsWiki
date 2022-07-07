@@ -12,7 +12,8 @@ interface CardHomeProps {
     planet: PlanetsProps,
     loading: boolean,
     reload: boolean,
-    setReload: React.Dispatch<React.SetStateAction<boolean>>
+    setReload: React.Dispatch<React.SetStateAction<boolean>>,
+    setModal: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 export function CardPlanet(props: CardHomeProps) {
@@ -72,7 +73,7 @@ export function CardPlanet(props: CardHomeProps) {
                             width: '100%',
                         }}
                         titleStyle={{fontWeight: 'bold', fontSize: 23}}
-                        onPress={() => {}}
+                        onPress={() => {props.setModal(true)}}
                     />
                 </View>
             </View>

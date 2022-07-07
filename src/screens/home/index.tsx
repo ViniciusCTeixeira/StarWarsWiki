@@ -9,6 +9,7 @@ import LogoImage from "../../assets/images/logo.png";
 import BackgroundHome from "../../assets/images/backgroud_home.jpg";
 
 import {CardPlanet} from "../../components/planets/card";
+import {ModalPlanets} from "../../components/planets/modal";
 
 import {getRandomPlanet} from "../../services/swapi";
 
@@ -24,6 +25,7 @@ export function Home(props: HomeProps) {
     const [isLoading, setIsLoading] = useState<boolean>(false);
     const [loading, setLoading] = useState<boolean>(false);
     const [reload, setReload] = useState<boolean>(false);
+    const [modal, setModal] = useState<boolean>(false);
 
     useEffect(() => {
         setLoading(false)
@@ -45,7 +47,7 @@ export function Home(props: HomeProps) {
                         <View style={Styles.text_center}>
                             <Image source={LogoImage} style={{width: 100, height: 100}}/>
                         </View>
-                        {isLoading && <CardPlanet planet={planet} reload={reload} setReload={setReload} loading={loading}/>}
+                        {isLoading && <CardPlanet planet={planet} reload={reload} setReload={setReload} loading={loading} setModal={setModal}/>}
                         <View style={[Styles.column, {width: '100%', marginVertical: 10}]}>
                             <View style={[Styles.row, {width: '100%', justifyContent: "space-between"}]}>
                                 <View style={{flex: 0.48}}>
@@ -101,6 +103,7 @@ export function Home(props: HomeProps) {
                         </View>
                     </View>
                 </ScrollView>
+                {isLoading && <ModalPlanets modal={modal} setModal={setModal} planet={planet}/>}
             </ImageBackground>
         </SafeAreaView>
     )

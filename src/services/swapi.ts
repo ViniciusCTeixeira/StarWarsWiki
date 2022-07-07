@@ -26,10 +26,15 @@ export function getStarships(page?: string) {
     return instance.get(url);
 }
 
-export function getVehicles(page?: string) {
-    const url = `vehicles${page}`;
-
-    return instance.get(url);
+export async function getVehicles(page?: string) {    
+        if(page){
+            page = `?page=${page}`
+        }else{
+            page=""
+        }
+        const url = `vehicles${page}`;
+    
+        return instance.get(url);
 }
 
 export function getFilms(page?: string) {

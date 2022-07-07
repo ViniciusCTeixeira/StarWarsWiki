@@ -39,7 +39,7 @@ export function ModalStarships(props: ModalStarships) {
                             </View>
                             <View style={Styles.divider}/>
                             <View style={Styles.text_center}>
-                                <Image source={StarshipsImage} style={{width: 100, height: 100}}/>
+                                <Image source={StarshipsImage} style={{height: 127, width: 211}}/>
                             </View>
                             <Text h4>Modelo: {props.starships.model}</Text>
                             <Text h4>Fabricante: {props.starships.manufacturer}</Text>

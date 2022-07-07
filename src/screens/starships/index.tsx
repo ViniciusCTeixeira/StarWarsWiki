@@ -63,10 +63,10 @@ export const Starship = () => {
                                 <TouchableOpacity
                                     onPress={() => {setStarships(item); setModal(true)}}
                                     style={{
-                                        width: "100%", flexDirection: "row", justifyContent: "center", borderWidth: 3, borderColor: "rgba(255, 255, 255, 0.6)", borderRadius: 50, marginBottom: 10, backgroundColor: "rgba(0, 0, 0, 0.6)"
+                                        width: "100%", flexDirection: "row", justifyContent: "center", borderWidth: 3, borderColor: "rgba(255, 255, 255, 0.6)", borderRadius: 50, marginBottom: 10, paddingVertical: 10, backgroundColor: "rgba(0, 0, 0, 0.6)"
                                     }}>
-                                    <View style={{flex: 0.3, alignItems: 'center',}}>
-                                        <Image source={StarshipsImage} style={{width: 50, height: 50}} />
+                                    <View style={{flex: 0.3, alignItems: 'center', justifyContent: "center"}}>
+                                        <Image source={StarshipsImage} style={{height: 34, width: 56}} />
                                     </View>
                                     <View style={{flex: 0.7, justifyContent: "center"}}>
                                         <Text style={{color: '#fff', fontSize: 25, fontWeight: 'bold'}}>{item.name}</Text>
